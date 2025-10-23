@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import { commonStyles, colors } from '../utils/styles';
-import { OceanBackground } from '../components/OceanBackground';
-import { GradientBackButton } from '../components/GradientBackButton';
-import { Story } from '../types';
+import { commonStyles, colors } from '../utils/CallOceanStyles';
+import { OceanBackground } from '../components/CallOceanOceanBackground';
+import { GradientBackButton } from '../components/CallOceanGradientBackButton';
+import { Story } from '../types/CallOceanTypes';
 
 interface AchievementsScreenProps {
   savedStories: Story[];

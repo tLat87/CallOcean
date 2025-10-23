@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { OceanBackground } from '../components/OceanBackground';
-import { GradientBackButton } from '../components/GradientBackButton';
-import { GradientButton } from '../components/GradientButton';
-import { CustomSwitch } from '../components/CustomSwitch';
-import { colors } from '../utils/styles';
+import { OceanBackground } from '../components/CallOceanOceanBackground';
+import { GradientBackButton } from '../components/CallOceanGradientBackButton';
+import { GradientButton } from '../components/CallOceanGradientButton';
+import { CustomSwitch } from '../components/CallOceanCustomSwitch';
+import { colors } from '../utils/CallOceanStyles';
 
 interface NotificationScreenProps {
   onBack: () => void;

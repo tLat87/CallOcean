@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer, ReactNode } from 'react';
-import { GameState, Answer } from '../types';
+import { GameState, Answer } from '../types/CallOceanTypes';
 
 interface GameContextType {
   state: GameState;

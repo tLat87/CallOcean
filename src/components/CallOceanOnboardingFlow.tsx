@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { OnboardingScreen1 } from '../screens/OnboardingScreen1';
-import { OnboardingScreen2 } from '../screens/OnboardingScreen2';
-import { OnboardingStorage } from '../utils/OnboardingStorage';
+import { OnboardingScreen1 } from '../screens/CallOceanOnboardingScreen1';
+import { OnboardingScreen2 } from '../screens/CallOceanOnboardingScreen2';
+import { OnboardingStorage } from '../utils/CallOceanOnboardingStorage';
 
 interface OnboardingFlowProps {
   onComplete: () => void;

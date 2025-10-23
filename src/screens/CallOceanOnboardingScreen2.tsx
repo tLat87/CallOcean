@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import { OceanBackground } from '../components/OceanBackground';
-import { commonStyles, colors } from '../utils/styles';
+import { OceanBackground } from '../components/CallOceanOceanBackground';
+import { commonStyles, colors } from '../utils/CallOceanStyles';
 
 interface OnboardingScreen2Props {
   onStart: () => void;

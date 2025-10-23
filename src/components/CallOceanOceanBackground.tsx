@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, ImageBackground, StyleSheet, ViewStyle } from 'react-native';
-import { colors } from '../utils/styles';
+import { colors } from '../utils/CallOceanStyles';
 
 interface OceanBackgroundProps {
   children: React.ReactNode;

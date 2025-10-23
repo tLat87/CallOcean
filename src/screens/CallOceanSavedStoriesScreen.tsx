@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
-import { commonStyles, colors } from '../utils/styles';
-import { OceanBackground } from '../components/OceanBackground';
-import { GradientBackButton } from '../components/GradientBackButton';
-import { GradientNavButton } from '../components/GradientNavButton';
-import { Story } from '../types';
+import { commonStyles, colors } from '../utils/CallOceanStyles';
+import { OceanBackground } from '../components/CallOceanOceanBackground';
+import { GradientBackButton } from '../components/CallOceanGradientBackButton';
+import { GradientNavButton } from '../components/CallOceanGradientNavButton';
+import { Story } from '../types/CallOceanTypes';
 
 interface SavedStoriesScreenProps {
   savedStories: Story[];

@@ -1,4 +1,4 @@
-import { OnboardingStorage } from './OnboardingStorage';
+import { OnboardingStorage } from './CallOceanOnboardingStorage';
 
 // Утилита для отладки онбординга
 export const OnboardingDebug = {

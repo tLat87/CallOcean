@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { GameProvider, useGame } from '../utils/GameContext';
-import { OnboardingFlowSimple } from './OnboardingFlowSimple';
-import { scenarios } from '../data/stories';
-import { MainMenuScreen } from '../screens/MainMenuScreen';
-import { ScenarioSelectionScreen } from '../screens/ScenarioSelectionScreen';
-import { StoryScreen } from '../screens/StoryScreen';
-import { QuestionScreen } from '../screens/QuestionScreen';
-import { FeedbackScreen } from '../screens/FeedbackScreen';
-import { AchievementsScreen } from '../screens/AchievementsScreen';
-import { NotificationScreen } from '../screens/NotificationScreen';
-import { MissionLogScreen } from '../screens/MissionLogScreen';
-import { StoriesScreen } from '../screens/StoriesScreen';
-import { Story, Question } from '../types';
-import { colors } from '../utils/styles';
+import { GameProvider, useGame } from '../utils/CallOceanGameContext';
+import { OnboardingFlowSimple } from './CallOceanOnboardingFlowSimple';
+import { scenarios } from '../data/CallOceanStories';
+import { MainMenuScreen } from '../screens/CallOceanMainMenuScreen';
+import { ScenarioSelectionScreen } from '../screens/CallOceanScenarioSelectionScreen';
+import { StoryScreen } from '../screens/CallOceanStoryScreen';
+import { QuestionScreen } from '../screens/CallOceanQuestionScreen';
+import { FeedbackScreen } from '../screens/CallOceanFeedbackScreen';
+import { AchievementsScreen } from '../screens/CallOceanAchievementsScreen';
+import { NotificationScreen } from '../screens/CallOceanNotificationScreen';
+import { MissionLogScreen } from '../screens/CallOceanMissionLogScreen';
+import { StoriesScreen } from '../screens/CallOceanStoriesScreen';
+import { Story, Question } from '../types/CallOceanTypes';
+import { colors } from '../utils/CallOceanStyles';
 
 // Simple navigation without React Navigation to avoid white screen issues
 

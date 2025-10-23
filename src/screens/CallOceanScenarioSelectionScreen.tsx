@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Image, Animated } from 'react-native';
-import { commonStyles, colors } from '../utils/styles';
-import { OceanBackground } from '../components/OceanBackground';
-import { GradientButton } from '../components/GradientButton';
-import { GradientBackButton } from '../components/GradientBackButton';
-import { Scenario } from '../types';
+import { commonStyles, colors } from '../utils/CallOceanStyles';
+import { OceanBackground } from '../components/CallOceanOceanBackground';
+import { GradientButton } from '../components/CallOceanGradientButton';
+import { GradientBackButton } from '../components/CallOceanGradientBackButton';
+import { Scenario } from '../types/CallOceanTypes';
 
 interface ScenarioSelectionScreenProps {
   scenarios: Scenario[];
