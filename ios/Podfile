@@ -37,27 +37,25 @@ target 'CallOcean' do
       if target.name == 'hermes-engine'
         target.build_phases.each do |phase|
           if phase.is_a?(Xcodeproj::Project::Object::PBXShellScriptBuildPhase)
-            phase_name = phase.name || phase.shell_script || ''
-            if phase_name.include?('Hermes') || phase_name.include?('hermes')
+            # Check both name and shell_script content for Hermes references
+            phase_name = phase.name || ''
+            script_content = phase.shell_script || ''
+            combined_check = "#{phase_name} #{script_content}"
+            
+            if combined_check.include?('Hermes') || combined_check.include?('hermes') || combined_check.include?('[CP-User]')
+              puts "Found Hermes script phase: #{phase_name}"
+              
               # Add output paths to prevent the script from running every build
               phase.output_paths = [
                 "$(BUILT_PRODUCTS_DIR)/hermes.framework",
                 "$(BUILT_PRODUCTS_DIR)/hermes.framework/hermes",
                 "$(PODS_XCFRAMEWORKS_BUILD_DIR)/hermes-engine/Pre-built/hermes.framework/hermes"
               ]
-              # Make script more resilient to errors
-              if phase.shell_script
-                # Wrap script to handle errors gracefully
-                original_script = phase.shell_script
-                phase.shell_script = <<-SCRIPT
-set -e
-set -u
-set -o pipefail
-
-# Try to run the original script, but don't fail if it errors
-#{original_script} || echo "Warning: Hermes script completed with errors, but continuing build..."
-SCRIPT
-              end
+              
+              # Set alwaysOutOfDate to false to respect output paths
+              phase.always_out_of_date = false
+              
+              puts "Added output paths to Hermes script phase"
             end
           end
         end
