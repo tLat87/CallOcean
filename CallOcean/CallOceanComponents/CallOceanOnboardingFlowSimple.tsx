@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { OnboardingScreen1 } from '../screens/CallOceanOnboardingScreen1';
-import { OnboardingScreen2 } from '../screens/CallOceanOnboardingScreen2';
+import { OnboardingScreen1 } from '../CallOceanScreens/CallOceanOnboardingScreen1';
+import { OnboardingScreen2 } from '../CallOceanScreens/CallOceanOnboardingScreen2';
 
 interface OnboardingFlowSimpleProps {
   onComplete: () => void;

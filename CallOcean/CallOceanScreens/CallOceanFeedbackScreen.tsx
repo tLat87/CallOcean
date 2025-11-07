@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { commonStyles, colors } from '../utils/CallOceanStyles';
-import { OceanBackground } from '../components/CallOceanOceanBackground';
-import { GradientButton } from '../components/CallOceanGradientButton';
+import { commonStyles, colors } from '../CallOceanUtils/CallOceanStyles';
+import { OceanBackground } from '../CallOceanComponents/CallOceanOceanBackground';
+import { GradientButton } from '../CallOceanComponents/CallOceanGradientButton';
 
 interface FeedbackScreenProps {
   feedback: string;

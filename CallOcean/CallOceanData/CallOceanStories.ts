@@ -1,4 +1,4 @@
-import { Scenario } from '../types/CallOceanTypes';
+import { Scenario } from '../CallOceanTypes/CallOceanTypes';
 
 export const scenarios: Scenario[] = [
   {

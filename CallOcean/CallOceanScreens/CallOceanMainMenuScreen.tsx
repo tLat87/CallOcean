@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import { commonStyles, colors } from '../utils/CallOceanStyles';
-import { OceanBackground } from '../components/CallOceanOceanBackground';
-import { GradientButton } from '../components/CallOceanGradientButton';
-import { GradientNavButton } from '../components/CallOceanGradientNavButton';
+import { commonStyles, colors } from '../CallOceanUtils/CallOceanStyles';
+import { OceanBackground } from '../CallOceanComponents/CallOceanOceanBackground';
+import { GradientButton } from '../CallOceanComponents/CallOceanGradientButton';
+import { GradientNavButton } from '../CallOceanComponents/CallOceanGradientNavButton';
 
 interface MainMenuScreenProps {
   onStartLearning: () => void;
@@ -28,7 +28,7 @@ export const MainMenuScreen: React.FC<MainMenuScreenProps> = ({
      
       {/* Main content */}
       <View style={styles.mainContent}>
-        <Image source={require('../assets/img/39927c36b4a6ef5b42b8c61baa92ba5661f59d35.png')} style={{width: 300, height: 200, alignSelf: 'center'}} />
+        <Image source={require('../CallOceanAssets/img/39927c36b4a6ef5b42b8c61baa92ba5661f59d35.png')} style={{width: 300, height: 200, alignSelf: 'center'}} />
 
         {/* Main button */}
         <View style={styles.buttonContainer}>
@@ -42,9 +42,9 @@ export const MainMenuScreen: React.FC<MainMenuScreenProps> = ({
 
       {/* Bottom navigation */}
       <View style={commonStyles.bottomNavigation}>
-        <GradientNavButton image={require('../assets/img/questions.png')} onPress={onHelp} />
-        <GradientNavButton image={require('../assets/img/star.png')} onPress={onSaved} />
-        <GradientNavButton image={require('../assets/img/settings.png')} onPress={onSettings} />
+        <GradientNavButton image={require('../CallOceanAssets/img/questions.png')} onPress={onHelp} />
+        <GradientNavButton image={require('../CallOceanAssets/img/star.png')} onPress={onSaved} />
+        <GradientNavButton image={require('../CallOceanAssets/img/settings.png')} onPress={onSettings} />
       </View>
     </OceanBackground>
   );

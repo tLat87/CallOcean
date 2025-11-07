@@ -7,8 +7,8 @@
 
 import React from 'react';
 import { StatusBar } from 'react-native';
-import { Navigation } from './src/components/CallOceanNavigation';
-import './src/utils/CallOceanOnboardingDebug'; // Импорт для отладки онбординга
+import { Navigation } from './CallOcean/CallOceanComponents/CallOceanNavigation';
+import './CallOcean/CallOceanUtils/CallOceanOnboardingDebug'; // Импорт для отладки онбординга
 
 function App() {
   return (

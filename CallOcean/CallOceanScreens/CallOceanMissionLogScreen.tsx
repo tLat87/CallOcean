@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import { OceanBackground } from '../components/CallOceanOceanBackground';
-import { GradientBackButton } from '../components/CallOceanGradientBackButton';
-import { commonStyles, colors } from '../utils/CallOceanStyles';
+import { OceanBackground } from '../CallOceanComponents/CallOceanOceanBackground';
+import { GradientBackButton } from '../CallOceanComponents/CallOceanGradientBackButton';
+import { commonStyles, colors } from '../CallOceanUtils/CallOceanStyles';
 
 interface MissionLogScreenProps {
   onBack: () => void;

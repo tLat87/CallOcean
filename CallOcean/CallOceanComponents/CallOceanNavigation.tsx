@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { GameProvider, useGame } from '../utils/CallOceanGameContext';
+import { GameProvider, useGame } from '../CallOceanUtils/CallOceanGameContext';
 import { OnboardingFlowSimple } from './CallOceanOnboardingFlowSimple';
-import { scenarios } from '../data/CallOceanStories';
-import { MainMenuScreen } from '../screens/CallOceanMainMenuScreen';
-import { ScenarioSelectionScreen } from '../screens/CallOceanScenarioSelectionScreen';
-import { StoryScreen } from '../screens/CallOceanStoryScreen';
-import { QuestionScreen } from '../screens/CallOceanQuestionScreen';
-import { FeedbackScreen } from '../screens/CallOceanFeedbackScreen';
-import { AchievementsScreen } from '../screens/CallOceanAchievementsScreen';
-import { NotificationScreen } from '../screens/CallOceanNotificationScreen';
-import { MissionLogScreen } from '../screens/CallOceanMissionLogScreen';
-import { StoriesScreen } from '../screens/CallOceanStoriesScreen';
-import { Story, Question } from '../types/CallOceanTypes';
-import { colors } from '../utils/CallOceanStyles';
+import { scenarios } from '../CallOceanData/CallOceanStories';
+import { MainMenuScreen } from '../CallOceanScreens/CallOceanMainMenuScreen';
+import { ScenarioSelectionScreen } from '../CallOceanScreens/CallOceanScenarioSelectionScreen';
+import { StoryScreen } from '../CallOceanScreens/CallOceanStoryScreen';
+import { QuestionScreen } from '../CallOceanScreens/CallOceanQuestionScreen';
+import { FeedbackScreen } from '../CallOceanScreens/CallOceanFeedbackScreen';
+import { AchievementsScreen } from '../CallOceanScreens/CallOceanAchievementsScreen';
+import { NotificationScreen } from '../CallOceanScreens/CallOceanNotificationScreen';
+import { MissionLogScreen } from '../CallOceanScreens/CallOceanMissionLogScreen';
+import { StoriesScreen } from '../CallOceanScreens/CallOceanStoriesScreen';
+import { Story, Question } from '../CallOceanTypes/CallOceanTypes';
+import { colors } from '../CallOceanUtils/CallOceanStyles';
 
 // Simple navigation without React Navigation to avoid white screen issues
 

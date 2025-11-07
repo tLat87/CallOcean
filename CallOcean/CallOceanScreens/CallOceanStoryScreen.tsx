@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { commonStyles, colors } from '../utils/CallOceanStyles';
-import { OceanBackground } from '../components/CallOceanOceanBackground';
-import { GradientButton } from '../components/CallOceanGradientButton';
-import { GradientBackButton } from '../components/CallOceanGradientBackButton';
-import { ActionButton } from '../components/CallOceanActionButton';
-import { Story } from '../types/CallOceanTypes';
+import { commonStyles, colors } from '../CallOceanUtils/CallOceanStyles';
+import { OceanBackground } from '../CallOceanComponents/CallOceanOceanBackground';
+import { GradientButton } from '../CallOceanComponents/CallOceanGradientButton';
+import { GradientBackButton } from '../CallOceanComponents/CallOceanGradientBackButton';
+import { ActionButton } from '../CallOceanComponents/CallOceanActionButton';
+import { Story } from '../CallOceanTypes/CallOceanTypes';
 
 interface StoryScreenProps {
   story: Story;
@@ -29,19 +29,19 @@ export const StoryScreen: React.FC<StoryScreenProps> = ({
   const getStoryImage = (imageName: string) => {
     switch (imageName) {
       case '1':
-        return require('../assets/img/1.png');
+        return require('../CallOceanAssets/img/1.png');
       case '2':
-        return require('../assets/img/2.png');
+        return require('../CallOceanAssets/img/2.png');
       case '3':
-        return require('../assets/img/3.png');
+        return require('../CallOceanAssets/img/3.png');
       case '4':
-        return require('../assets/img/4.png');
+        return require('../CallOceanAssets/img/4.png');
       case '5':
-        return require('../assets/img/5.png');
+        return require('../CallOceanAssets/img/5.png');
       case '6':
-        return require('../assets/img/6.png');
+        return require('../CallOceanAssets/img/6.png');
       default:
-        return require('../assets/img/1.png');
+        return require('../CallOceanAssets/img/1.png');
     }
   };
   return (

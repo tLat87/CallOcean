@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Image, Animated } from 'react-native';
-import { commonStyles, colors } from '../utils/CallOceanStyles';
-import { OceanBackground } from '../components/CallOceanOceanBackground';
-import { GradientButton } from '../components/CallOceanGradientButton';
-import { GradientBackButton } from '../components/CallOceanGradientBackButton';
-import { Scenario } from '../types/CallOceanTypes';
+import { commonStyles, colors } from '../CallOceanUtils/CallOceanStyles';
+import { OceanBackground } from '../CallOceanComponents/CallOceanOceanBackground';
+import { GradientButton } from '../CallOceanComponents/CallOceanGradientButton';
+import { GradientBackButton } from '../CallOceanComponents/CallOceanGradientBackButton';
+import { Scenario } from '../CallOceanTypes/CallOceanTypes';
 
 interface ScenarioSelectionScreenProps {
   scenarios: Scenario[];
@@ -93,7 +93,7 @@ export const ScenarioSelectionScreen: React.FC<ScenarioSelectionScreenProps> = (
         ))}
       </ScrollView>
 
-      {/* <Image source={require('../assets/img/846d80425b8da3bbbd1a55e0f69987bc2474a7e7.png')} style={{width: 300, height: 450, position: 'absolute', bottom: 0, alignSelf: 'center'}} /> */}
+      {/* <Image source={require('../CallOceanAssets/img/846d80425b8da3bbbd1a55e0f69987bc2474a7e7.png')} style={{width: 300, height: 450, position: 'absolute', bottom: 0, alignSelf: 'center'}} /> */}
     </OceanBackground>
   );
 };

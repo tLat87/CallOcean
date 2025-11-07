@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { commonStyles, colors } from '../utils/CallOceanStyles';
-import { OceanBackground } from '../components/CallOceanOceanBackground';
-import { GradientButton } from '../components/CallOceanGradientButton';
-import { GradientBackButton } from '../components/CallOceanGradientBackButton';
-import { Question } from '../types/CallOceanTypes';
+import { commonStyles, colors } from '../CallOceanUtils/CallOceanStyles';
+import { OceanBackground } from '../CallOceanComponents/CallOceanOceanBackground';
+import { GradientButton } from '../CallOceanComponents/CallOceanGradientButton';
+import { GradientBackButton } from '../CallOceanComponents/CallOceanGradientBackButton';
+import { Question } from '../CallOceanTypes/CallOceanTypes';
 
 interface QuestionScreenProps {
   question: Question;

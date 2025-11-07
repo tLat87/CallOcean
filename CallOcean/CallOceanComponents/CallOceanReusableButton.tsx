@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, ViewStyle, TextStyle } from 'react-native';
-import { colors } from '../utils/CallOceanStyles';
+import { colors } from '../CallOceanUtils/CallOceanStyles';
 
 interface ReusableButtonProps {
   onPress: () => void;
