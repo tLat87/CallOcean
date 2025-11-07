@@ -35,6 +35,7 @@ target 'CallOcean' do
     # Fix Hermes script phase to add output paths and handle errors gracefully
     installer.pods_project.targets.each do |target|
       if target.name == 'hermes-engine'
+        Pod::UI.puts "Processing hermes-engine target..."
         target.build_phases.each do |phase|
           if phase.is_a?(Xcodeproj::Project::Object::PBXShellScriptBuildPhase)
             # Check both name and shell_script content for Hermes references
@@ -43,23 +44,27 @@ target 'CallOcean' do
             combined_check = "#{phase_name} #{script_content}"
             
             if combined_check.include?('Hermes') || combined_check.include?('hermes') || combined_check.include?('[CP-User]')
-              puts "Found Hermes script phase: #{phase_name}"
+              Pod::UI.puts "Found Hermes script phase: #{phase_name}"
               
-              # Add output paths to prevent the script from running every build
-              phase.output_paths = [
-                "$(BUILT_PRODUCTS_DIR)/hermes.framework",
-                "$(BUILT_PRODUCTS_DIR)/hermes.framework/hermes",
-                "$(PODS_XCFRAMEWORKS_BUILD_DIR)/hermes-engine/Pre-built/hermes.framework/hermes"
-              ]
+              # Add output paths using the correct Xcodeproj API
+              output_paths_array = phase.output_paths || []
+              output_paths_array << "$(BUILT_PRODUCTS_DIR)/hermes.framework"
+              output_paths_array << "$(BUILT_PRODUCTS_DIR)/hermes.framework/hermes"
+              output_paths_array << "$(PODS_XCFRAMEWORKS_BUILD_DIR)/hermes-engine/Pre-built/hermes.framework/hermes"
+              phase.output_paths = output_paths_array.uniq
               
               # Set alwaysOutOfDate to false to respect output paths
-              phase.always_out_of_date = false
+              phase.always_out_of_date = '0'
               
-              puts "Added output paths to Hermes script phase"
+              Pod::UI.puts "Added #{phase.output_paths.length} output paths to Hermes script phase"
             end
           end
         end
       end
     end
+    
+    # Save the project to ensure changes are persisted
+    installer.pods_project.save
+    Pod::UI.puts "Saved Pods project with Hermes fixes"
   end
 end

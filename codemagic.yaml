@@ -27,6 +27,12 @@ workflows:
               # Install pods (post_install hook will fix Hermes script)
               pod install --repo-update
               echo "Pods installed successfully"
+              # Verify Hermes script was fixed
+              if grep -q "outputPaths" Pods/Pods.xcodeproj/project.pbxproj 2>/dev/null; then
+                echo "Hermes script output paths verified"
+              else
+                echo "Warning: Hermes script may not have output paths"
+              fi
           - name: Set up provisioning profile settings on  Xcode project
             script: |
               cd ios
@@ -44,10 +50,12 @@ workflows:
               $PLIST_BUDDY -c "Add :ITSAppUsesNonExemptEncryption bool false" $PLIST || echo "Key already exists or file not found"
           - name: Build ipa for distribution
             script: | 
-              # Set environment to use single job to avoid "Internal inconsistency error" with Yoga target
-              export XCODE_XCCONFIG_FILE=""
+              # Set environment to use single job to avoid "Internal inconsistency error"
+              export COMPILER_INDEX_STORE_ENABLE=NO
               # Limit parallel builds to avoid target consistency errors
               defaults write com.apple.dt.Xcode IDEBuildOperationMaxNumberOfConcurrentCompileTasks 1 || true
+              # Use xcode-project which handles signing automatically
+              # The defaults write should limit parallel builds
               xcode-project build-ipa \
                 --workspace "$CM_BUILD_DIR/ios/$XCODE_WORKSPACE" \
                 --scheme "$XCODE_SCHEME"
